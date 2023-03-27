@@ -2,11 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import { Buffer } from "buffer";
 
+import TestLineGraph from "./TestLineGraph";
+
 
 function App() {
 
-  const [uname, setUname] = useState("repe");
-  const [pw, setPw] = useState("repe");
+  const [uname, setUname] = useState("Lassi");
+  const [pw, setPw] = useState("password");
 
   /**
    * Sends creadentials in form data
@@ -61,8 +63,12 @@ function App() {
       .catch( e => console.log(e.message))
   }
 
+  credentialsAsRequestParams();
+  requestWithBearerToken();
+
   return (
     <div>
+      <TestLineGraph />
     </div>
   );
 }

@@ -1,0 +1,34 @@
+[
+	{
+		"TimeYear": "1968",
+		"TempDelta": "2.5"
+	},
+	{
+		"TimeYear": "1969",
+		"TempDelta": "1.0"
+	},
+	{
+		"TimeYear": "1970",
+		"TempDelta": "5.0"
+	},
+	{
+		"TimeYear": "1971",
+		"TempDelta": "-2.0"
+	},
+    {
+		"TimeYear": "1972",
+		"TempDelta": "3.0"
+	},
+	{
+		"TimeYear": "1973",
+		"TempDelta": "10.0"
+	},
+	{
+		"TimeYear": "1974",
+		"TempDelta": "7.0"
+	},
+	{
+		"TimeYear": "1975",
+		"TempDelta": "5.0"
+	}
+]
