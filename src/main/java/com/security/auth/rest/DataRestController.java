@@ -1,10 +1,10 @@
-package com.exampledb.project.rest;
+package com.security.auth.rest;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.exampledb.project.data.globalannualdata;
-import com.exampledb.project.repository.DataRepository;
+import com.security.auth.data.globalannualdata;
+import com.security.auth.repository.DataRepository;
 
 @RestController
 public class DataRestController {

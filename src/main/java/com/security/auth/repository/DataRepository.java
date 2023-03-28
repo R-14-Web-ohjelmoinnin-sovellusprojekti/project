@@ -1,7 +1,7 @@
-package com.exampledb.project.repository;
+package com.security.auth.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.exampledb.project.data.globalannualdata;
+import com.security.auth.data.globalannualdata;
 import java.util.List;
 
 @Repository
