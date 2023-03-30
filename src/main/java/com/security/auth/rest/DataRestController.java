@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.security.auth.data.globalannualdata;
 import com.security.auth.repository.DataRepository;
 
+@CrossOrigin
 @RestController
 public class DataRestController {
 
