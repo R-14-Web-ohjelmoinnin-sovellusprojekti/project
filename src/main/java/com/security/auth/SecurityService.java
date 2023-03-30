@@ -33,7 +33,7 @@ public class SecurityService {
 
     @PostConstruct
     void init(){
-        repo.save(new User("repe", myEncoder.encode("repe")));
+        repo.save(new User("user", myEncoder.encode("password")));
     }
 
     /**
@@ -91,11 +91,11 @@ public class SecurityService {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost", "https://localhost"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH",
                 "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("authorization", "content-type",
-                "x-auth-token"));
+                "x-auth-token", "x-requested-with x-uw-act-as"));
         configuration.setExposedHeaders(Arrays.asList("x-auth-token"));
         UrlBasedCorsConfigurationSource source = new
                 UrlBasedCorsConfigurationSource();
