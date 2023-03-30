@@ -1,24 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import tempData from "./data/testdata.json";
+import visData from "./data/vis1.json";
+import axios from "axios";
 
-export default function TestLineGraph() {
+export default function TestLineGraph() {  
+
+  const [dataArray, setDataArray] = useState([]);
+
+  const url = 'http://localhost:8080/'; 
+
+  const getAllData = async () => 
+  {
+    axios.defaults.withCredentials = false;
+    
+    await axios.get(`${url}data`)
+    .then((response)  =>  {
+      setDataArray(response.data);
+    })
+    .catch(error => console.error(`Error: ${error}`));
+  }
+
+  useEffect(()=>
+  {
+    getAllData();
+  },[]);
+
   const data = {
     datasets: [
       {
-        label: "Temperature delta",
-        data: [...tempData],//.reverse(),
-        borderColor: "rgb(255, 99, 132)",
+        parsing: true,
+
+        label: "Temperature Delta",
+        data: [...dataArray],
+        //data: [...visData],
+
+        borderColor: "rgb(255, 70, 112)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
-        yAxisID: "tempDelta",
         parsing: {
-          xAxisKey: "TimeYear",
-          yAxisKey: "TempDelta",
+          xAxisKey: "time",
+          yAxisKey: "anomaly",
         },
         pointRadius: 1,
       },
     ],
+    
   };
 
   const options = {
@@ -32,12 +59,16 @@ export default function TestLineGraph() {
         text: "Test Temperature plot",
       },
     },
+    
     scales: {
-      co2: {
-        type: "linear",
-        display: true,
-        position: "right",
+      x: {
+            type: 'linear',
       },
+      y:
+       {
+            type: 'linear',
+       }
+      
     },
   };
 
