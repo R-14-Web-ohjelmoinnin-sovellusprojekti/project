@@ -30,7 +30,7 @@ public class WebConfiguration implements WebMvcConfigurer{
             .allowedOrigins("http://localhost:3000", "http://localhost:8080")
             .allowedMethods("GET", "POST")
             .allowedHeaders("header1", "header2", "header3", "*")
-            .exposedHeaders("data", "login")
+            .exposedHeaders("data", "login", "vis1")
             .allowCredentials(true).maxAge(3600);
     }
     

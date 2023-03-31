@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @CrossOrigin  //Allowing CORS
 @RestController
 public class SecurityRestApi {

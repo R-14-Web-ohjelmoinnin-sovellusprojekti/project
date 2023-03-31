@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
-import tempData from "./data/testdata.json";
-import visData from "./data/vis1.json";
 import axios from "axios";
 
-export default function TestLineGraph() {  
+export default function Visualization1() {  
 
   const [dataArray, setDataArray] = useState([]);
 
@@ -35,7 +33,6 @@ export default function TestLineGraph() {
 
         label: "Temperature Delta",
         data: [...dataArray],
-        //data: [...visData],
 
         borderColor: "rgb(255, 70, 112)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
