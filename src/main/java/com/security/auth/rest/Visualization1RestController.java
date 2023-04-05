@@ -1,6 +1,8 @@
 package com.security.auth.rest;
 
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,10 +19,15 @@ public class Visualization1RestController {
     public Visualization1RestController(Visualization1Repository vis1) {
         this.vis1 = vis1;
     }
-
+    /*
     @GetMapping("/vis1") //get all data
     public List<Visualization1> findAll() {
         return vis1.findAll();
+    }
+    */
+    @GetMapping("/vis1") //get all data
+    public List<Map<String, Object>> getAll() {
+        return vis1.getAll();
     }
 
     @GetMapping("/vis1/{time}") //search data by time

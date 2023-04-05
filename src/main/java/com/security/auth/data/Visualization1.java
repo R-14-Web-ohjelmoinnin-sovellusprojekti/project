@@ -20,7 +20,6 @@ public class Visualization1 {
         this.time = time;
         this.anomaly = anomaly;
         this.area = area;
-
     }
 
     public Visualization1() {
