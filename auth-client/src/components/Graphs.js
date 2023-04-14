@@ -1,12 +1,13 @@
 import React from 'react'
 
 import Visualization1 from "../Graphs/Visualization1";
+import Visualization5 from '../Graphs/Visualization5';
 
 
 export default function Graphs(){
     return(
         <div>
-            Graphs component
+            <Visualization5 />
             <Visualization1 />
         </div>           
     );
