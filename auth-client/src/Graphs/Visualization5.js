@@ -131,7 +131,7 @@ export default function Visualization5() {
 
     const  industryData= {
 
-        labels: getSector(visData, "industy"),
+        labels: getSector(visData, "industry"),
         datasets: [
             {
                 data: getEmissions(visData, "industry"),
@@ -196,8 +196,6 @@ export default function Visualization5() {
         ],
     };
 
-
-    
     const options = {
         responsive: true,
         plugins: {
@@ -206,9 +204,48 @@ export default function Visualization5() {
                 display: true,
                 text: "Visualization 5",
             }
-        }
-         
-    };
+        }};
+
+    const options1 = {
+        responsive: true,
+        plugins: {
+            title: {
+                align: "center",
+                display: true,
+                text: "Agriculture, Forestry & Land Use (AFOLU)",
+            }
+        }};
+
+    const options2 = {
+        responsive: true,
+        plugins: {
+            title: {
+                align: "center",
+                display: true,
+                text: "Energy",
+            }
+        }};
+
+    const options3 = {
+        responsive: true,
+        plugins: {
+            title: {
+                align: "center",
+                display: true,
+                text: "Industrial processes",
+            }
+        }};
+
+        const options4 = {
+            responsive: true,
+            plugins: {
+                title: {
+                    align: "center",
+                    display: true,
+                    text: "Waste",
+                }
+            }};
+
 
     const dataRef = useRef();
 
@@ -219,16 +256,16 @@ export default function Visualization5() {
             
             console.log(`Dataset: ${datasetIndexNum} and Data: ${dataPoint}`);
 
-        if (getElementsAtEvent(dataRef.current, event)[0].index == 0){
+        if (getElementsAtEvent(dataRef.current, event)[0].index === 0){
             setDataState(0);
         }
-        else if (getElementsAtEvent(dataRef.current, event)[0].index == 1){
+        else if (getElementsAtEvent(dataRef.current, event)[0].index === 1){
             setDataState(1);
         }
-        else if (getElementsAtEvent(dataRef.current, event)[0].index == 2){
+        else if (getElementsAtEvent(dataRef.current, event)[0].index === 2){
             setDataState(2);
         }
-        else if (getElementsAtEvent(dataRef.current, event)[0].index == 3){
+        else if (getElementsAtEvent(dataRef.current, event)[0].index === 3){
             setDataState(3);
         }
     }}
@@ -237,16 +274,16 @@ export default function Visualization5() {
 
     switch(dataState) {
         case 0:
-            view = <Doughnut options = {options} data = {afluData} />
+            view = <Doughnut options = {options1} data = {afluData} />
             break;
         case 1:
-            view = <Doughnut options = {options} data = {energyData} />
+            view = <Doughnut options = {options2} data = {energyData} />
             break;
         case 2:
-            view = <Doughnut options = {options} data = {industryData} />
+            view = <Doughnut options = {options3} data = {industryData} />
             break;
         case 3:
-            view = <Doughnut options = {options} data = {wasteData} />
+            view = <Doughnut options = {options4} data = {wasteData} />
             break;       
     }
 

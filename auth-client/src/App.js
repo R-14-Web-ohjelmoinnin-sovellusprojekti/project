@@ -10,7 +10,10 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from "./components/Login";
 import About from './components/About';
-import Graphs from './components/Graphs';
+import GraphsControl from './components/GraphsControl';
+import V1_V3 from "./components/V1-V3";
+import V4_V5 from "./components/V4-V5";
+
 
 
 function App() {
@@ -19,6 +22,8 @@ function App() {
 
   <Route path="/signup" element={ <SignUp />} />
   <Route path="/login" element={ <Login />} />
+  <Route path="/V1-V3" element={ <V1_V3 />} />
+  <Route path="/V4-V5" element={ <V4_V5 />} />
 </>
 
 
@@ -27,13 +32,13 @@ return (
   <div>
     <div className="navbar">
       <Link to="/"><div>Home</div></Link>
-      <Link to="/about"><div>About</div></Link>
-      <Link to="/graphs"><div>Visualization Graphs</div></Link>
+      <Link to="/About"><div>About</div></Link>
+      <Link to="/GraphsControl"><div>Visualization Graphs</div></Link>
     </div>
     <Routes>
       <Route path="/" element={ <Home />} />
-      <Route path="/about" element={ <About />} />
-      <Route path="/graphs" element={ <Graphs />} />
+      <Route path="/About" element={ <About />} />
+      <Route path="/GraphsControl" element={ <GraphsControl />} />
       { authRoutes }
 
       <Route path="/TestLineGraph" element={ <TestLineGraph />} />

@@ -7,7 +7,7 @@ export default function Home(props){
             <h1>Welcome to ClimateView home page!</h1>
 
                 
-            <Link to="signup"><button>SignUp</button></Link>
+            <Link to="/signup"><button>SignUp</button></Link>
         </div>
     );
 }
