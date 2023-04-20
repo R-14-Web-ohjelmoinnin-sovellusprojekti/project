@@ -3,30 +3,30 @@ import React, { useState, useEffect, useRef } from "react";
 import { Doughnut, getElementsAtEvent } from "react-chartjs-2";
 import Constants from '../Constants.json'
 import axios from "axios";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend} from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function getSector(data, ide){
+function getSector(data, ide) {
     const result = [];
 
     data.forEach(obj => {
-        if (obj.ide === ide){
+        if (obj.ide === ide) {
             const { sector } = obj;
-            result.push( sector )
+            result.push(sector)
         }
     });
 
     return result;
 }
 
-function getEmissions(data, ide){
+function getEmissions(data, ide) {
     const result = [];
 
     data.forEach(obj => {
-        if (obj.ide === ide){
+        if (obj.ide === ide) {
             const { emissions } = obj;
-            result.push( emissions )
+            result.push(emissions)
         }
     });
 
@@ -35,23 +35,23 @@ function getEmissions(data, ide){
 
 export default function Visualization5() {
 
-  const [visData, setVisData] = useState([]);
-  const [dataState, setDataState] = useState("");
+    const [visData, setVisData] = useState([]);
+    const [dataState, setDataState] = useState("");
 
-  const getVis5Data = async () => {
-    await axios.get(Constants.API_ADDRESS + '/vis5')
-      .then((response) => {
-        setVisData(response.data);
+    const getVis5Data = async () => {
+        await axios.get(Constants.API_ADDRESS + '/vis5')
+            .then((response) => {
+                setVisData(response.data);
 
-            console.log("XXXX");
-            console.log(response.data);
-        })
-      .catch(error => console.error(`Error: ${error}`));
-   }
+                console.log("XXXX");
+                console.log(response.data);
+            })
+            .catch(error => console.error(`Error: ${error}`));
+    }
 
- useEffect(() => {
-     getVis5Data();
-  }, []);
+    useEffect(() => {
+        getVis5Data();
+    }, []);
 
     const data = {
 
@@ -101,7 +101,7 @@ export default function Visualization5() {
                     'rgba(100, 159, 45, 0.2)',
                     'rgba(211, 185, 31, 0.2)',
                     'rgba(255, 283, 82, 0.2)',
-                    
+
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -129,7 +129,7 @@ export default function Visualization5() {
         ],
     };
 
-    const  industryData= {
+    const industryData = {
 
         labels: getSector(visData, "industry"),
         datasets: [
@@ -177,7 +177,7 @@ export default function Visualization5() {
         ],
     };
 
-    const  wasteData= {
+    const wasteData = {
 
         labels: getSector(visData, "waste"),
         datasets: [
@@ -202,9 +202,10 @@ export default function Visualization5() {
             title: {
                 align: "center",
                 display: true,
-                text: "Visualization 5",
+                text: "Visualization 5, main sectors",
             }
-        }};
+        }
+    };
 
     const options1 = {
         responsive: true,
@@ -214,7 +215,8 @@ export default function Visualization5() {
                 display: true,
                 text: "Agriculture, Forestry & Land Use (AFOLU)",
             }
-        }};
+        }
+    };
 
     const options2 = {
         responsive: true,
@@ -224,7 +226,8 @@ export default function Visualization5() {
                 display: true,
                 text: "Energy",
             }
-        }};
+        }
+    };
 
     const options3 = {
         responsive: true,
@@ -234,17 +237,19 @@ export default function Visualization5() {
                 display: true,
                 text: "Industrial processes",
             }
-        }};
+        }
+    };
 
-        const options4 = {
-            responsive: true,
-            plugins: {
-                title: {
-                    align: "center",
-                    display: true,
-                    text: "Waste",
-                }
-            }};
+    const options4 = {
+        responsive: true,
+        plugins: {
+            title: {
+                align: "center",
+                display: true,
+                text: "Waste",
+            }
+        }
+    };
 
 
     const dataRef = useRef();
@@ -253,52 +258,62 @@ export default function Visualization5() {
         if (getElementsAtEvent(dataRef.current, event).length > 0) {
             const datasetIndexNum = getElementsAtEvent(dataRef.current, event)[0].datasetIndex;
             const dataPoint = getElementsAtEvent(dataRef.current, event)[0].index;
-            
+
             console.log(`Dataset: ${datasetIndexNum} and Data: ${dataPoint}`);
 
-        if (getElementsAtEvent(dataRef.current, event)[0].index === 0){
-            setDataState(0);
+            if (getElementsAtEvent(dataRef.current, event)[0].index === 0) {
+                setDataState(0);
+            }
+            else if (getElementsAtEvent(dataRef.current, event)[0].index === 1) {
+                setDataState(1);
+            }
+            else if (getElementsAtEvent(dataRef.current, event)[0].index === 2) {
+                setDataState(2);
+            }
+            else if (getElementsAtEvent(dataRef.current, event)[0].index === 3) {
+                setDataState(3);
+            }
         }
-        else if (getElementsAtEvent(dataRef.current, event)[0].index === 1){
-            setDataState(1);
-        }
-        else if (getElementsAtEvent(dataRef.current, event)[0].index === 2){
-            setDataState(2);
-        }
-        else if (getElementsAtEvent(dataRef.current, event)[0].index === 3){
-            setDataState(3);
-        }
-    }}
+    }
 
     let view = null
 
-    switch(dataState) {
+    switch (dataState) {
         case 0:
-            view = <Doughnut options = {options1} data = {afluData} />
+            view = <Doughnut options={options1} data={afluData} />
             break;
         case 1:
-            view = <Doughnut options = {options2} data = {energyData} />
+            view = <Doughnut options={options2} data={energyData} />
             break;
         case 2:
-            view = <Doughnut options = {options3} data = {industryData} />
+            view = <Doughnut options={options3} data={industryData} />
             break;
         case 3:
-            view = <Doughnut options = {options4} data = {wasteData} />
-            break;       
+            view = <Doughnut options={options4} data={wasteData} />
+            break;
     }
 
     return (
 
-        <div  style = {{ width : "500px" }}>
-            <h1>CO2 emissions by sector</h1>
-            <Doughnut
-                data={data}
-                options={options}
-                onClick={onClick}
-                ref={dataRef}
-            ></Doughnut>
-            {view}
+        <div  >
+            <div>
+                <h1>CO2 emissions by sector</h1>
+            </div>
+            <div style={{ width: "500px", display: 'flex' }}>
+                <Doughnut
+                    data={data}
+                    options={options}
+                    onClick={onClick}
+                    ref={dataRef}
+                ></Doughnut>
+                {view}
+            </div>
+            <p>
+                <a href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector">Description</a><br></br>
+                <a href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx">Dataset</a>
+            </p>
         </div>
+
     );
 
-    }
+}
