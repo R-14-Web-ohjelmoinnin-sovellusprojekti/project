@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.security.auth.data.Visualization1;
+import com.security.auth.data.Visualization1Annual;
 import com.security.auth.repository.Visualization1Repository;
 
 @CrossOrigin
@@ -19,29 +19,34 @@ public class Visualization1RestController {
     public Visualization1RestController(Visualization1Repository vis1) {
         this.vis1 = vis1;
     }
-    /*
-    @GetMapping("/vis1") //get all data
-    public List<Visualization1> findAll() {
-        return vis1.findAll();
+
+    @GetMapping("/vis1annual") //get all annual data
+    public List<Map<String, Object>> getAnnual() {
+        return vis1.getAnnual();
     }
-    */
-    @GetMapping("/vis1") //get all data
-    public List<Map<String, Object>> getAll() {
-        return vis1.getAll();
+
+    @GetMapping("/vis1monthly") //get all monthly data
+    public List<Map<String, Object>> getMonthly() {
+        return vis1.getMonthly();
+    }
+
+    @GetMapping("/vis1rec") //get all reconstruction data
+    public List<Map<String, Object>> getReconstruction() {
+        return vis1.getReconstruction();
     }
 
     @GetMapping("/vis1/{time}") //search data by time
-    public List<Visualization1> getDataByTime(@PathVariable String time) {
+    public List<Visualization1Annual> getDataByTime(@PathVariable String time) {
         return vis1.findByTime(time);
     }
 
     @PostMapping("/vis1") //add data
-    public Visualization1 addData(@RequestBody Visualization1 data) {
+    public Visualization1Annual addData(@RequestBody Visualization1Annual data) {
         return vis1.save(data);
     }
 
     @PutMapping("/vis1") //update data
-    public Visualization1 updateData(@RequestBody Visualization1 data) {
+    public Visualization1Annual updateData(@RequestBody Visualization1Annual data) {
         return vis1.save(data);
     }
     /*

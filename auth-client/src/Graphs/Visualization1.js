@@ -1,28 +1,52 @@
 import React, { useState, useEffect } from "react";
-import { Chart } from "chart.js/auto";
-import { Line } from "react-chartjs-2";
+//import { Chart } from "chart.js/auto";
+import { Line, Chart } from "react-chartjs-2";
 import axios from "axios";
+import { DateTime } from "luxon";
+import 'chartjs-adapter-luxon';
 
 export default function Visualization1() {  
 
-  const [dataArray, setDataArray] = useState([]);
+  const [annualData, setAnnualData] = useState([]);
+  const [monthlyData, setMonthlyData] = useState([]);
+  const [tempReconstruction, setTempReconstruction] = useState([]);
 
-  const url = 'http://localhost:8080/';  
+  const [toggleDataset, setDataset] = useState([]);
 
-  const getAllData = async () => 
+  const url = 'http://localhost:8080/';
+
+  const getAnnualData = async () => 
   {
-    axios.defaults.withCredentials = false;
-    
-    await axios.get(`${url}vis1`)
+    await axios.get(`${url}vis1annual`)
     .then((response)  =>  {
-      setDataArray(response.data);
+      setAnnualData(response.data);
     })
     .catch(error => console.error(`Error: ${error}`));
   }
 
+  const getMonthlyData = async () => 
+  {
+    await axios.get(`${url}vis1monthly`)
+    .then((response)  =>  {
+      setMonthlyData(response.data);
+    })
+    .catch(error => console.error(`Error: ${error}`));
+  }
+
+  const getReconstructionData = async () => 
+  {
+    await axios.get(`${url}vis1rec`)
+    .then((response)  =>  {
+      setTempReconstruction(response.data);
+    })
+    .catch(error => console.error(`Error: ${error}`));
+  }  
+
   useEffect(()=>
   {
-    getAllData();
+    getAnnualData();
+    getMonthlyData();
+    getReconstructionData();
   },[]);
 
   
@@ -31,80 +55,159 @@ export default function Visualization1() {
   const isNorthern = ((dataArray)=>dataArray.area === 2);
   const isSouthern = ((dataArray)=>dataArray.area === 3);
 
-  const data = {
+  const annualOptions = {
+        responsive: true,
+        plugins: {
+        title: {
+          align: "center",
+          display: true,
+          text: "Annual Data",
+        }
+      },
+      scales:
+      {
+        x: {
+          type: 'time',
+          time: {
+          tooltipFormat: 'yyyy'
+          },
+          //min: new Date('1850').valueOf(),
+          //max: 2023//max: new Date('2023').valueOf()
+        },
+        y: {
+            type: 'linear',
+            //min: -1,
+            //max: 1.5
+        }
+      },
+      parsing: {
+          xAxisKey: "time",
+          yAxisKey: "anomaly",
+      },
+      spanGaps: true
+  };
+
+  const monthlyOptions = {
+    responsive: true,
+      plugins: {
+        title: {
+          align: "center",
+          display: true,
+          text: "Monthly Data",
+    }
+  },
+    parsing: {
+        xAxisKey: "time",
+        yAxisKey: "anomaly",
+    },
+    scales:
+      {
+        x: {
+          type: 'time',
+          //min: new Date('1850-01').valueOf(),
+          //max: new Date('2023-01').valueOf(),
+          time: {
+            tooltipFormat: 'yyyy LLLL',
+            unit: 'month',
+            parser: "yyyy-LL",
+            displayFormats: {
+            month: 'yyyy LLLL'
+          }
+        },
+      },
+      y: {
+          type: 'linear',
+          //min: -2,
+          //max: 2
+      }
+    },
+    spanGaps: true,
+    pointRadius: 0
+  };
+
+  const annualDataset = {
     datasets: [
       {
         label: "Global",
-        data: dataArray.filter(dataArray => isGlobal(dataArray)),
-        borderColor: "rgb(255, 70, 112)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        parsing: {
-          xAxisKey: "time",
-          yAxisKey: "anomaly",
-        },
-        pointRadius: 1,
+        data: annualData.filter(annualData => isGlobal(annualData)),
+        borderColor: "rgb(50, 255, 112)",
+        backgroundColor: "rgba(32, 255, 32, 0.5)",
       },
       {
         label: "Northern",
-        data: dataArray.filter(dataArray => isNorthern(dataArray)),
-        borderColor: "rgb(50, 255, 112)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        parsing: {
-          xAxisKey: "time",
-          yAxisKey: "anomaly",
-        },
-        pointRadius: 1,
+        data: annualData.filter(annualData => isNorthern(annualData)),
+        borderColor: "rgb(0, 50, 255)",
+        backgroundColor: "rgba(32, 32, 255, 0.5)",
       },
       {
         label: "Southern",
-        data: dataArray.filter(dataArray => isSouthern(dataArray)),
-        borderColor: "rgb(0, 70, 255)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        parsing: {
-          xAxisKey: "time",
-          yAxisKey: "anomaly",
-        },
-        pointRadius: 1,
+        data: annualData.filter(annualData => isSouthern(annualData)),
+        borderColor: "rgb(255, 50, 112)",
+        backgroundColor: "rgba(255, 32, 32, 0.5)",
       },
-    ],    
+      {
+        label: "Reconstruction",
+        data: tempReconstruction,
+        borderColor: "rgb(255, 255, 112)",
+        backgroundColor: "rgba(255, 255, 32, 0.5)",
+      },
+  ]};
+
+    const monthlyDataset = {
+      datasets: [
+      {
+        label: "Global",
+        data: monthlyData.filter(monthlyData => isGlobal(monthlyData)),
+        borderColor: "rgb(50, 255, 112)",
+        backgroundColor: "rgba(32, 255, 32, 0.5)",
+      },
+      {
+        label: "Northern",
+        data: monthlyData.filter(monthlyData => isNorthern(monthlyData)),
+        borderColor: "rgb(0, 50, 255)",
+        backgroundColor: "rgba(32, 32, 255, 0.5)",
+      },
+      {
+        label: "Southern",
+        data: monthlyData.filter(monthlyData => isSouthern(monthlyData)),
+        borderColor: "rgb(255, 50, 112)",
+        backgroundColor: "rgba(255, 32, 32, 0.5)",
+      },         
+    ]};
+
+  function timeAnnual()
+  {
+    setDataset(0);
   };
 
-  const options = {
-    //locale: 'fi-FI',
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Temperature Anomalies",
-      },
-    },    
-    scales: {
-      x: {
-            type: 'linear',
-            min : 1850,
-            max : 2023,
-            ticks: {
-              //stepSize: 1
-              callback: (value) => {return value}
-          },
-          time: {
-            unit : 'year'
-          }
-      },
-      y:
-       {
-            type: 'linear',
-       }      
-    },
+  function timeMonthly()
+  {
+    setDataset(1);
   };
 
+  function showRecData()
+  {
+    console.log(tempReconstruction);
+  }
+
+  let view = <Line options = {annualOptions} data = {annualDataset} />;
+
+  switch(toggleDataset)
+  {
+    case 0:
+      view = <Line options = {annualOptions} data = {annualDataset} />
+      break;
+    case 1:
+      view = <Line options = {monthlyOptions} data = {monthlyDataset} />
+      break;
+  }
+  //<button onClick={showRecData}>Reconstruction Data Log</button>     
   return (
-    <div style={{ width: "1000px" }}>
+    <div style={{ width: "1000px"}}>
       <h1>Global historical surface temperature anomalies from January 1850 onwards</h1>
-      <Line options={options} data={data} />
+      <button onClick={timeAnnual}>Annual</button>
+      <button onClick={timeMonthly}>Monthly</button>          
+      {view}
     </div>
   );
 }

@@ -7,8 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="annual")
-public class Visualization1 {
+@Table(name="monthly")
+public class Visualization1Monthly {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,13 +16,13 @@ public class Visualization1 {
     private double anomaly;
     private int area;
 
-    public Visualization1(String time, double anomaly, int area) {
+    public Visualization1Monthly(String time, double anomaly, int area) {
         this.time = time;
         this.anomaly = anomaly;
         this.area = area;
     }
 
-    public Visualization1() {
+    public Visualization1Monthly() {
     }
 
     public String getTime() {
