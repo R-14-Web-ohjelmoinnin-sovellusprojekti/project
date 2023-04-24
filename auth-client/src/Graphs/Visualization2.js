@@ -155,7 +155,7 @@ export default function Visualization2() {
     };
 
   return (
-    <div style={{ width: "1000px" }}>
+    <div class="vis2-container">
       <h1>CO2 concentrations</h1>
       <Line options={options} data={data} />
     </div>

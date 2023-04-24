@@ -1,8 +1,47 @@
 .navbar {
   display: flex;
-  background-color: lightblue;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  box-shadow: 0 6px 2px -2px whitesmoke;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
 }
 
 .navbar > * {
-  margin-right: 10px;
+  margin-right: 30px;
+}
+
+body {
+  background-color: #f1f5f8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-name {
+  margin-right: 5px;
 }

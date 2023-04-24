@@ -4,6 +4,7 @@ import { Line, Chart } from "react-chartjs-2";
 import axios from "axios";
 import { DateTime } from "luxon";
 import 'chartjs-adapter-luxon';
+import './Visualizations.css';
 
 export default function Visualization1() {  
 
@@ -200,9 +201,21 @@ export default function Visualization1() {
     case 1:
       view = <Line options = {monthlyOptions} data = {monthlyDataset} />
       break;
-  }
-  //<button onClick={showRecData}>Reconstruction Data Log</button>     
+  }    
   return (
+    <div className="vis1-container">
+      <h1>Global historical surface temperature anomalies from January 1850 onwards</h1>
+        <div className="vis1-buttons">
+          <button onClick={timeAnnual}>Annual</button>
+          <button onClick={timeMonthly}>Monthly</button>
+        </div>     
+      {view}
+    </div>
+  );  
+}
+
+/*
+return (
     <div style={{ width: "1000px"}}>
       <h1>Global historical surface temperature anomalies from January 1850 onwards</h1>
       <button onClick={timeAnnual}>Annual</button>
@@ -210,4 +223,4 @@ export default function Visualization1() {
       {view}
     </div>
   );
-}
+  */

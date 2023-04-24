@@ -1,7 +1,3 @@
-import { useState } from "react";
-import axios from "axios";
-import { Buffer } from "buffer";
-
 import TestLineGraph from "./TestLineGraph";
 
 import './App.css';
@@ -45,6 +41,16 @@ return (
     </Routes>
 
   </div>
+  <footer>
+    <div className="footer">
+      <div className="footer-name">© 2023</div>
+      <div className="footer-name">Created by: </div>
+      <div className="footer-name">Tomi Kääriäinen</div>
+      <div className="footer-name">Matti Nurmela</div>
+      <div className="footer-name">Lassi Väisänen</div>
+      <div className="footer-name">Emilia Virta</div>
+    </div>
+  </footer>
 </BrowserRouter>
 
 

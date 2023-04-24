@@ -1,0 +1,111 @@
+/*This is css for the visualizations1 in the visualization page*/
+.vis1-container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .vis1-container h1 {
+    margin-top: 5%;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .vis1-container button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .vis1-container button:hover {
+    background-color: #555;
+  }
+  
+  .vis1-container .chart-container {
+    margin-top: 30px;
+  }
+
+  .vis1-buttons {
+    display: flex;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+/*This is css for the visualizations2 in the visualization page*/
+    .vis2-container {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .vis2-container .chart-container {
+        margin-top: 30px;
+    }
+
+    .vis2-container h1 {
+        padding-top: 5%;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+/*This is css for the visualizations3 in the visualization page*/
+    .vis3-container {
+        padding-bottom: 10%;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .vis3-container .chart-container {
+        margin-top: 30px;
+    }
+
+    .vis3-container h1 {
+        padding-top: 5%;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+/*This is css for the visualizations4 in the visualization page*/
+
+
+/*This is css for the visualizations5 in the visualization page*/
+    .vis5-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 30%;
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .vis5-container h1 {
+        padding-top: 5%;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .vis5-container a {
+        padding: 10px;
+        font-size: 0.8em;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .vis5-container a:hover {
+        color: grey;
+    }

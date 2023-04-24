@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
+import "chartjs-adapter-luxon";
 
 export default function Visualization3() {
   const [gastData, setGastData] = useState([]);
@@ -117,7 +118,7 @@ export default function Visualization3() {
   
 
   return (
-    <div style={{ width: "1000px", height: "500px" }}>
+    <div class="vis3-container">
       <h1>Evolution of global temperature over the past two million years</h1>
       <Line data={data} options={options} />
     </div>

@@ -4,6 +4,7 @@ import { Doughnut, getElementsAtEvent } from "react-chartjs-2";
 import Constants from '../Constants.json'
 import axios from "axios";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import './Visualizations.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -294,20 +295,17 @@ export default function Visualization5() {
     }
 
     return (
-
-        <div  >
+        <div className="vis5-container">
             <div>
                 <h1>CO2 emissions by sector</h1>
-            </div>
-            <div style={{ width: "500px", display: 'flex' }}>
-                <Doughnut
-                    data={data}
-                    options={options}
-                    onClick={onClick}
-                    ref={dataRef}
-                ></Doughnut>
-                {view}
-            </div>
+            </div>  
+            <Doughnut
+                data={data}
+                options={options}
+                onClick={onClick}
+                ref={dataRef}
+            ></Doughnut>
+            {view}      
             <p>
                 <a href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector">Description</a><br></br>
                 <a href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx">Dataset</a>

@@ -4,6 +4,7 @@ import Constants from '../Constants.json'
 import { useNavigate } from 'react-router-dom'
 
 
+
 export default function SignUp(props){
   const navigate = useNavigate(); 
   const [signupProcessState, setSignupProcessState ] = useState("idle")
