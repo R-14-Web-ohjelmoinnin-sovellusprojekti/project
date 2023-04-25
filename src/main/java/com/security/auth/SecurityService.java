@@ -1,6 +1,7 @@
 package com.security.auth;
 
 import java.util.Arrays;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -83,6 +84,15 @@ public class SecurityService {
         }
 
         return null;
+    }
+
+    public void deleteUsername(String username) {
+
+        repo.deleteById(username);
+    }
+
+    public List<User> getUsers() {
+        return repo.findAll();
     }
 
     /**
