@@ -37,6 +37,8 @@ export default function Login(props) {
                 setTimeout(() => {
                     props.login(token);
                     //localStorage.setItem("token", result.data)
+                    localStorage.setItem("token", result.data)
+                    localStorage.setItem("uname", uname, result.data)
                     //UserAuthContextValue.login(result.data.token);
                     navigate("/about", { replace: true });
                 }, 1500);
