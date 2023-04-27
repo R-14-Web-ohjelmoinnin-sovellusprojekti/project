@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from "./components/Login";
+import DeleteUser from "./components/DeleteUser";
 import About from './components/About';
 import GraphsControl from './components/GraphsControl';
 import V1_V3 from "./components/V1-V3";
@@ -18,6 +19,7 @@ function App() {
 
   <Route path="/signup" element={ <SignUp />} />
   <Route path="/login" element={ <Login />} />
+  <Route path="/deleteuser" element={ <DeleteUser />} />
   <Route path="/V1-V3" element={ <V1_V3 />} />
   <Route path="/V4-V5" element={ <V4_V5 />} />
 </>

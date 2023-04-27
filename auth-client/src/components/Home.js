@@ -10,6 +10,7 @@ export default function Home(props){
         <div className="buttons-home">
             <a href="/signup" className="button button--signup">Sign up</a>
             <a href="/login" className="button button--login">Log in</a>
+            <a href='/DeleteUser' className="button button--DeleteUser">Delete User</a>
         </div>
         </div>
     );
