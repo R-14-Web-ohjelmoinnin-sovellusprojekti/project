@@ -3,7 +3,7 @@ import axios from "axios";
 import Constants from '../Constants.json'
 import { useNavigate } from 'react-router-dom'
 import './components.css'
-import { UserAuthContext } from '../Contexts'
+// import { UserAuthContext } from '../Contexts'
 
 
 //axios.defaults.silent = true;
@@ -32,15 +32,15 @@ export default function Login(props) {
                 // console.log(result);
                 // console.log(result.data);
                 const token = result.data
-                
+
                 setLoginProcess("success");
                 setTimeout(() => {
                     props.login(token);
                     //localStorage.setItem("token", result.data)
-                    localStorage.setItem("token", result.data)
-                    localStorage.setItem("uname", uname, result.data)
+                    localStorage.setItem("token", token)
+                    localStorage.setItem("uname", uname)
                     //UserAuthContextValue.login(result.data.token);
-                    navigate("/about", { replace: true });
+                    navigate("/", { replace: true });
                 }, 1500);
             }
             catch (error) {

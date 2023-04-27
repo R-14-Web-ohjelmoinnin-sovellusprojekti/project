@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-export default function SignUp(props) {
+export default function SignUp() {
   const navigate = useNavigate();
   const [signupProcessState, setSignupProcessState] = useState("idle")
   const [uname, setUname] = useState('');
@@ -32,7 +32,7 @@ export default function SignUp(props) {
       }, 1500)
 
     } catch (error) {
-      console.error(error);
+      //console.error(error);
       setSignupProcessState("SignUpFailure")
     }
   }

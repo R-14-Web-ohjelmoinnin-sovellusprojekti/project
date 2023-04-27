@@ -46,6 +46,11 @@ body {
     margin-right: 1rem;
   }
 
+  .button--logout {
+    background-color: #007bff;
+    margin-right: 1rem;
+  }
+
   .button--deleteuser {
     background-color: #007bff;
   }
