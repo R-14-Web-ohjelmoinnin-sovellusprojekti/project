@@ -36,7 +36,8 @@ export default function DeleteUser(){
     }
 
     return (
-        <div>
+        <div className='deleteuser-container'>
+            <div className='deleteuser-form'>
             <h2>Delete User</h2>
             <form onSubmit={deleteAccount}>
                 <div>
@@ -44,6 +45,7 @@ export default function DeleteUser(){
                     <button type="submit" onClick={(e) => setDeleteUser(e.target.value)}>Delete</button>
                 </div>
             </form>
+            </div>
         </div>
     )
 }
