@@ -8,9 +8,9 @@ import { UserAuthContext } from '../Contexts'
 
 //axios.defaults.silent = true;
 
-export default function Login() {
+export default function Login(props) {
 
-    const UserAuthContextValue = useContext(UserAuthContext);
+    //const UserAuthContextValue = useContext(UserAuthContext);
     let navigate = useNavigate();
 
     const [uname, setUname] = useState('');
@@ -32,9 +32,11 @@ export default function Login() {
                 // console.log(result);
                 // console.log(result.data);
                 const token = result.data
+                
                 setLoginProcess("success");
                 setTimeout(() => {
-                    localStorage.setItem("token", result.data)
+                    props.login(token);
+                    //localStorage.setItem("token", result.data)
                     //UserAuthContextValue.login(result.data.token);
                     navigate("/about", { replace: true });
                 }, 1500);
