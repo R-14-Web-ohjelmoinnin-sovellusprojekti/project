@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "co2_annual")
-public class V2Annual {
+public class Visualization2Annual {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,12 +16,12 @@ public class V2Annual {
     private double co2;
     
 
-    public V2Annual(String time, double co2) {
+    public Visualization2Annual(String time, double co2) {
         this.time = time;
         this.co2 = co2;
     }
 
-    public V2Annual() {
+    public Visualization2Annual() {
     }
 
     public String getTime() {

@@ -8,19 +8,19 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "icecore1")
-public class V2Icecore1 {
+public class Visualization2Icecore1 {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String time;
     private double co2;
 
-    public V2Icecore1(String time, double co2) {
+    public Visualization2Icecore1(String time, double co2) {
         this.time = time;
         this.co2 = co2;
     }
 
-    public V2Icecore1() {
+    public Visualization2Icecore1() {
     }
 
     public String getTime() {

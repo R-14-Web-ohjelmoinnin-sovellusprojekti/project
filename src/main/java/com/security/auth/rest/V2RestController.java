@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.security.auth.data.Visualization2.V2Annual;
-import com.security.auth.data.Visualization2.V2Icecore1;
-import com.security.auth.data.Visualization2.V2Icecore2;
-import com.security.auth.data.Visualization2.V2Icecore3;
-import com.security.auth.data.Visualization2.V2Monthly;
+import com.security.auth.data.Visualization2.Visualization2Annual;
+import com.security.auth.data.Visualization2.Visualization2Icecore1;
+import com.security.auth.data.Visualization2.Visualization2Icecore2;
+import com.security.auth.data.Visualization2.Visualization2Icecore3;
+import com.security.auth.data.Visualization2.Visualization2Monthly;
 import com.security.auth.repository.Visualization2.Visualization2AnnualRepository;
 import com.security.auth.repository.Visualization2.Visualization2Icecore1Repository;
 import com.security.auth.repository.Visualization2.Visualization2Icecore2Repository;
@@ -41,27 +41,27 @@ public class V2RestController {
     }
 
     @GetMapping("/vis2Annual")
-    public List<V2Annual> findAll() {
+    public List<Visualization2Annual> findAll() {
         return vis2Annual.findAll();
     }
 
     @GetMapping("/vis2Monthly")
-    public List<V2Monthly> getAll() {
+    public List<Visualization2Monthly> getAll() {
         return vis2Monthly.findAll();
     }
 
     @GetMapping("/vis2Icecore1")
-    public List<V2Icecore1> getIcecore1() {
+    public List<Visualization2Icecore1> getIcecore1() {
         return vis2Icecore1.findAll();
     }
 
     @GetMapping("/vis2Icecore2")
-    public List<V2Icecore2> getIcecore2() {
+    public List<Visualization2Icecore2> getIcecore2() {
         return vis2Icecore2.findAll();
     }
 
     @GetMapping("/vis2Icecore3")
-    public List<V2Icecore3> getIcecore3() {
+    public List<Visualization2Icecore3> getIcecore3() {
         return vis2Icecore3.findAll();
     }
 }

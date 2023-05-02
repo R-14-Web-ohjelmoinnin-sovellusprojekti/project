@@ -7,20 +7,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "icecore2")
-public class V2Icecore2 {
+@Table(name = "icecore3")
+public class Visualization2Icecore3 {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String time;
     private double co2;
 
-    public V2Icecore2(String time, double co2) {
+    public Visualization2Icecore3(String time, double co2) {
         this.time = time;
         this.co2 = co2;
     }
 
-    public V2Icecore2() {
+    public Visualization2Icecore3() {
     }
 
     public String getTime() {

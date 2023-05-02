@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.security.auth.data.Visualization2.V2Annual;
+import com.security.auth.data.Visualization2.Visualization2Annual;
 
 @Repository
-public interface Visualization2AnnualRepository extends JpaRepository<V2Annual, Integer> {
+public interface Visualization2AnnualRepository extends JpaRepository<Visualization2Annual, Integer> {
 
-        List<V2Annual> findAll();
+        List<Visualization2Annual> findAll();
 }

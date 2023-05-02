@@ -7,22 +7,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "co2_monthly")
-public class V2Monthly {
-
+@Table(name = "icecore2")
+public class Visualization2Icecore2 {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String time;
-    private double decimaldate;
     private double co2;
 
-    public V2Monthly(String time, double decimaldate, double co2) {
+    public Visualization2Icecore2(String time, double co2) {
         this.time = time;
-        this.decimaldate = decimaldate; 
         this.co2 = co2;
     }
 
-    public V2Monthly() {
+    public Visualization2Icecore2() {
     }
 
     public String getTime() {
@@ -40,13 +38,4 @@ public class V2Monthly {
     public void setCo2(double co2) {
         this.co2 = co2;
     }
-
-    public double getDecimalDate() {
-        return this.decimaldate;
-    }
-
-    public void setDecimalDate(double decimaldate) {
-        this.decimaldate = decimaldate;
-    }
-
 }
