@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.security.auth.data.Visualization1Annual;
+import com.security.auth.data.Visualization1.Visualization1Annual;
 import com.security.auth.repository.Visualization1Repository;
 
 @CrossOrigin

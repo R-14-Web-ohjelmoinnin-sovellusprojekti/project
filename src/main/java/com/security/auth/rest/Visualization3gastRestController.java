@@ -2,17 +2,19 @@ package com.security.auth.rest;
 import java.util.List;
 import java.util.Map;
 import org.springframework.web.bind.annotation.*;
+
+import com.security.auth.repository.Visualization3.Visualization3GastRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import com.security.auth.repository.Visualization3gastRepository;
 
 @CrossOrigin
 @RestController
-public class Visualization3gastRestController {
+public class Visualization3GastRestController {
 
-    Visualization3gastRepository vis3gast;
+    Visualization3GastRepository vis3gast;
 
     @Autowired
-    public Visualization3gastRestController(Visualization3gastRepository vis3gast) {
+    public Visualization3GastRestController(Visualization3GastRepository vis3gast) {
         this.vis3gast = vis3gast;
     }
 

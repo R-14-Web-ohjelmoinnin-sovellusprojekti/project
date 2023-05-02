@@ -1,4 +1,4 @@
-package com.security.auth.data;
+package com.security.auth.data.Visualization3;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,20 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vis3cd")
-public class Visualization3cd {
+@Table(name="vis3gast")
+public class Visualization3Gast {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String time;
-    private double carbon_dioxide;
+    private double gast;
 
-    public Visualization3cd(String time, double carbon_dioxide) {
+    public Visualization3Gast(String time, double gast) {
         this.time = time;
-        this.carbon_dioxide = carbon_dioxide;
+        this.gast = gast;
     }
 
-    public Visualization3cd() {
+    public Visualization3Gast() {
     }
 
     public String getTime() {
@@ -31,11 +31,11 @@ public class Visualization3cd {
         this.time = time;
     }
 
-    public double getcarbonDioxide() {
-        return this.carbon_dioxide;
+    public double getGast() {
+        return this.gast;
     }
 
-    public void setcarbonDioxide(double carbon_dioxide) {
-        this.carbon_dioxide = carbon_dioxide;
+    public void setGast(double gast) {
+        this.gast = gast;
     }
 }

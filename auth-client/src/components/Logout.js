@@ -3,15 +3,22 @@ import { useNavigate } from 'react-router-dom';
 
 function Logout(props) {
   const navigate = useNavigate();
+
+  const confirmLogout = () => {
+    if (window.confirm("Are you sure you want to log out?")) {
+      handleLogout();
+    }
+    navigate("/");
+  }
   
-  const handleLogout = () => {
+  const handleLogout = async () => {
     props.setUserToken(null);
     window.localStorage.removeItem("token");
-    navigate("/");
+    navigate("/", { replace: true });
   };
 
   return (
-    <button onClick={handleLogout}>Logout</button>
+    <button onClick={confirmLogout}>Logout</button>
   );
 }
 

@@ -13,26 +13,26 @@ import com.security.auth.data.Visualization2.V2Icecore1;
 import com.security.auth.data.Visualization2.V2Icecore2;
 import com.security.auth.data.Visualization2.V2Icecore3;
 import com.security.auth.data.Visualization2.V2Monthly;
-import com.security.auth.repository.Visualization2.V2AnnualRepository;
-import com.security.auth.repository.Visualization2.V2Icecore1Repository;
-import com.security.auth.repository.Visualization2.V2Icecore2Repository;
-import com.security.auth.repository.Visualization2.V2Icecore3Repository;
-import com.security.auth.repository.Visualization2.V2MonthlyRepository;
+import com.security.auth.repository.Visualization2.Visualization2AnnualRepository;
+import com.security.auth.repository.Visualization2.Visualization2Icecore1Repository;
+import com.security.auth.repository.Visualization2.Visualization2Icecore2Repository;
+import com.security.auth.repository.Visualization2.Visualization2Icecore3Repository;
+import com.security.auth.repository.Visualization2.Visualization2MonthlyRepository;
 
 @CrossOrigin
 @RestController
 public class V2RestController {
 
-    V2AnnualRepository vis2Annual;
-    V2MonthlyRepository vis2Monthly;
-    V2Icecore1Repository vis2Icecore1;
-    V2Icecore2Repository vis2Icecore2;
-    V2Icecore3Repository vis2Icecore3;
+    Visualization2AnnualRepository vis2Annual;
+    Visualization2MonthlyRepository vis2Monthly;
+    Visualization2Icecore1Repository vis2Icecore1;
+    Visualization2Icecore2Repository vis2Icecore2;
+    Visualization2Icecore3Repository vis2Icecore3;
 
     @Autowired
-    public V2RestController(V2AnnualRepository vis2Annual,
-            V2MonthlyRepository vis2Monthly, V2Icecore1Repository vis2Icecore1,
-            V2Icecore2Repository vis2Icecore2, V2Icecore3Repository vis2Icecore3) {
+    public V2RestController(Visualization2AnnualRepository vis2Annual,
+            Visualization2MonthlyRepository vis2Monthly, Visualization2Icecore1Repository vis2Icecore1,
+            Visualization2Icecore2Repository vis2Icecore2, Visualization2Icecore3Repository vis2Icecore3) {
         this.vis2Annual = vis2Annual;
         this.vis2Monthly = vis2Monthly;
         this.vis2Icecore1 = vis2Icecore1;

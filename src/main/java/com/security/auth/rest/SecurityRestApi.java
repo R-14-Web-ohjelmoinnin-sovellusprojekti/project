@@ -1,4 +1,4 @@
-package com.security.auth;
+package com.security.auth.rest;
 
 import java.util.Base64;
 
@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.security.auth.SecurityService;
+import com.security.auth.User;
 
 @CrossOrigin  //Allowing CORS
 @RestController

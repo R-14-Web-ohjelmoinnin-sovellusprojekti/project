@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.security.auth.data.Visualization2.V2Monthly;
 
 @Repository
-public interface V2MonthlyRepository extends JpaRepository<V2Monthly, Integer> {
+public interface Visualization2MonthlyRepository extends JpaRepository<V2Monthly, Integer> {
 
     List<V2Monthly> findAll();
     // @Query(value="SELECT * FROM co2_monthly", nativeQuery = true) // get all data

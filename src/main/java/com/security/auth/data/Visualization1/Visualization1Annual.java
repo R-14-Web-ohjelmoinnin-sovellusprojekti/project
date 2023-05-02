@@ -1,4 +1,4 @@
-package com.security.auth.data;
+package com.security.auth.data.Visualization1;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,8 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="monthly")
-public class Visualization1Monthly {
+@Table(name="annual")
+public class Visualization1Annual {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,13 +16,13 @@ public class Visualization1Monthly {
     private double anomaly;
     private int area;
 
-    public Visualization1Monthly(String time, double anomaly, int area) {
+    public Visualization1Annual(String time, double anomaly, int area) {
         this.time = time;
         this.anomaly = anomaly;
         this.area = area;
     }
 
-    public Visualization1Monthly() {
+    public Visualization1Annual() {
     }
 
     public String getTime() {

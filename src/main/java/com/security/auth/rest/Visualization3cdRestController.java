@@ -3,16 +3,16 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.security.auth.repository.Visualization3cdRepository;
+import com.security.auth.repository.Visualization3.Visualization3CdRepository;
 
 @CrossOrigin
 @RestController
-public class Visualization3cdRestController {
+public class Visualization3CdRestController {
 
-    Visualization3cdRepository vis3cd;
+    Visualization3CdRepository vis3cd;
 
     @Autowired
-    public Visualization3cdRestController(Visualization3cdRepository vis3cd) {
+    public Visualization3CdRestController(Visualization3CdRepository vis3cd) {
         this.vis3cd = vis3cd;
     }
 

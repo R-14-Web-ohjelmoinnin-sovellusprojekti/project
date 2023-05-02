@@ -1,4 +1,3 @@
-import TestLineGraph from "./TestLineGraph";
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
@@ -53,7 +52,6 @@ function App() {
           <Route path="/About" element={<About />} />
           {authRoutes}
           <Route path="*" element={<Home userToken={userToken != null} />} />
-          <Route path="/TestLineGraph" element={<TestLineGraph />} />
         </Routes>
 
       </div>
