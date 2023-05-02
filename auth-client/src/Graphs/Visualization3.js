@@ -38,7 +38,7 @@ export default function Visualization3() {
       {
         label: "Global data",
         data: gastData,
-        yAxisID: "left-y-axis",
+        xAxisID: "left-x-axis",
         borderColor: "rgb(255, 0, 0)",
         backgroundColor: "rgba(255, 0, 0, 0.8)",
         parsing: {
@@ -65,13 +65,13 @@ export default function Visualization3() {
         type: 'time',
         time: {
           displayFormats: {
-            year: 'YYYY'
+            unit: 'YYYY'
           }
         }
       },
-      yAxes: [
+      y: [
         {
-          id: "left-y-axis",
+          id: "left-x-axis",
           type: "linear",
           position: "left",
           ticks: {
@@ -86,9 +86,6 @@ export default function Visualization3() {
           id: "right-y-axis",
           type: "linear",
           position: "right",
-          ticks: {
-            beginAtZero: true,
-          },
           scaleLabel: {
             display: true,
             labelString: 'CD',
@@ -106,12 +103,22 @@ export default function Visualization3() {
       },
       title: {
         display: true,
-        text: "Test Temperature plot",
       },
     },
     scales: {
       x: {
         type: "linear",
+        diplay: true,
+        position: "bottom",
+        min: -1000,
+        max: 805000,
+      },
+      yAxis: {
+        type: "linear",
+        display: true,
+        position: "right",
+        min: -7,
+        max: 2.5,
       },
     },
   };
@@ -119,8 +126,19 @@ export default function Visualization3() {
 
   return (
     <div class="vis3-container">
-      <h1>Evolution of global temperature over the past two million years</h1>
+      <div>
+        <h1>Evolution of global temperature over the past two million years</h1>
+      </div>
       <Line data={data} options={options} />
+      <p> 
+        The graph shows the evolution of global temperature over the past two million years.
+        You can find more detailed information below
+      </p>
+      <p>
+        <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf">Description</a><br></br>
+        <a href="http://carolynsnyder.com/papers/Snyder_Data_Figures.zip">Dataset</a><br></br>
+        <a href="https://www.southampton.ac.uk/~cpd/history.html">Human Evolution dataset</a>
+      </p>
     </div>
   );
 }
