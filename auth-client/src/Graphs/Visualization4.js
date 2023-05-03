@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Select from "react-select"
-import AsyncSelect from 'react-select/async';
 //import { Chart } from "chart.js/auto";
 import { Line, Chart } from "react-chartjs-2";
 import axios from "axios";
