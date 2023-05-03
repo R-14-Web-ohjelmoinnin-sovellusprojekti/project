@@ -1,6 +1,7 @@
+
 /*This is css for the visualizations1 in the visualization page*/
 .vis1-container {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
   }
@@ -45,7 +46,7 @@
   
 /*This is css for the visualizations2 in the visualization page*/
     .vis2-container {
-        width: 90%;
+        width: 70%;
         margin: 0 auto;
         text-align: center;
     }
@@ -63,7 +64,7 @@
 /*This is css for the visualizations3 in the visualization page*/
     .vis3-container {
         padding-bottom: 10%;
-        width: 90%;
+        width: 70%;
         margin: 0 auto;
         text-align: center;
     }
@@ -79,6 +80,25 @@
     }
 
 /*This is css for the visualizations4 in the visualization page*/
+
+
+/* Media queries, responsive*/
+@media only screen and (max-width: 768px){
+    .vis1-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .vis2-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .vis3-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
 
 
 /*This is css for the visualizations5 in the visualization page*/
@@ -108,4 +128,10 @@
 
     .vis5-container a:hover {
         color: grey;
+    }
+
+    @media only screen and (max-width: 768px){
+        .vis5-container {
+            width: 90%;
+        }
     }
