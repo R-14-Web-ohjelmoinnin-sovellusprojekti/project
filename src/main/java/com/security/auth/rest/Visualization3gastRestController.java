@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @CrossOrigin
 @RestController
-public class Visualization3GastRestController {
+public class Visualization3gastRestController {
 
     Visualization3GastRepository vis3gast;
 
     @Autowired
-    public Visualization3GastRestController(Visualization3GastRepository vis3gast) {
+    public Visualization3gastRestController(Visualization3GastRepository vis3gast) {
         this.vis3gast = vis3gast;
     }
 

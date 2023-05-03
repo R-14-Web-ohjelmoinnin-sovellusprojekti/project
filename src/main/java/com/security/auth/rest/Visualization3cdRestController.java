@@ -7,12 +7,12 @@ import com.security.auth.repository.Visualization3.Visualization3CdRepository;
 
 @CrossOrigin
 @RestController
-public class Visualization3CdRestController {
+public class Visualization3cdRestController {
 
     Visualization3CdRepository vis3cd;
 
     @Autowired
-    public Visualization3CdRestController(Visualization3CdRepository vis3cd) {
+    public Visualization3cdRestController(Visualization3CdRepository vis3cd) {
         this.vis3cd = vis3cd;
     }
 
