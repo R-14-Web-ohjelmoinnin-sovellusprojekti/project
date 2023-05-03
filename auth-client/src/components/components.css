@@ -1,161 +1,119 @@
 /* This is css for the home screen */
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.buttons-home {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #007bff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button--signup {
+  background-color: #007bff;
+  margin-right: 1rem;
+}
+
+.button--login {
+  background-color: #007bff;
+  margin-right: 1rem;
+}
+
+.button--logout {
+  background-color: #007bff;
+  margin-right: 1rem;
+}
+
+.button--deleteuser {
+  background-color: #007bff;
+}
+
+.button:hover {
+  background-color: #0069d9;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
   h1 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
+    font-size: 1.5rem;
   }
-  
+
   .buttons-home {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
   }
-  
+
   .button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 2rem;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: #007bff;
-    transition: background-color 0.2s ease-in-out;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1rem;
   }
-  
-  .button--signup {
-    background-color: #007bff;
-    margin-right: 1rem;
-  }
-  
-  .button--login {
-    background-color: #007bff;
-    margin-right: 1rem;
-  }
+}
 
-  .button--logout {
-    background-color: #007bff;
-    margin-right: 1rem;
-  }
+/* Login, Signup, and DeleteUser screen styles for small screens */
 
-  .button--deleteuser {
-    background-color: #007bff;
-  }
-  
-  .button:hover {
-    background-color: #0069d9;
-    cursor: pointer;
-  }
-  
+@media only screen and (max-width: 768px) {
+.login-container,
+.signup-container,
+.deleteuser-container {
+  height: auto;
+  padding: 2rem;
+}
+
+.login-form,
+.signup-form,
+.deleteuser-form {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.login-form input,
+.signup-form input,
+.deleteuser-form input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.login-form button,
+.signup-form button,
+.deleteuser-form button {
+  padding: 1rem;
+  margin: 1rem 0 0;
+}
+}
+
 /*this is css for the login screen*/
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ffffff;
-    margin: 0;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .login-form input {
-    width: auto;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .login-form button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-    display: block;
-  }
-  
-  .login-form button:hover {
-    background-color: #0069d9;
-  }
-
-  /*This is css for the SignUp screen*/
-  .signup-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .signup-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ffffff;
-    margin: 0;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .signup-form input {
-    width: auto;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .signup-form button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-    display: block;
-  }
-  
-  .signup-form button:hover {
-    background-color: #0069d9;
-  }
-
-/* This is css for the delete user screen*/
-.deleteuser-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,7 +123,7 @@ body {
   padding: 0;
 }
 
-.deleteuser-form {
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,7 +135,7 @@ body {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.deleteuser-form input {
+.login-form input {
   width: auto;
   padding: 20px;
   margin-bottom: 10px;
@@ -185,7 +143,7 @@ body {
   border: 1px solid #ccc;
 }
 
-.deleteuser-form button {
+.login-form button {
   width: 100%;
   background-color: #007bff;
   color: white;
@@ -197,52 +155,146 @@ body {
   display: block;
 }
 
- .deleteuser-form button:hover {
+.login-form button:hover {
   background-color: #0069d9;
-  
- }
+}
+
+/*This is css for the SignUp screen*/
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  margin: 0;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.signup-form input {
+  width: auto;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.signup-form button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+  display: block;
+}
+
+.signup-form button:hover {
+  background-color: #0069d9;
+}
+
+/* This is css for the delete user screen*/
+.deleteuser-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+padding: 0;
+}
+
+.deleteuser-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+border: 1px solid #ffffff;
+margin: 0;
+padding: 30px;
+border-radius: 5px;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.deleteuser-form input {
+width: auto;
+padding: 20px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+.deleteuser-form button {
+width: 100%;
+background-color: #007bff;
+color: white;
+padding: 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+margin: 10px 0;
+display: block;
+}
+
+.deleteuser-form button:hover {
+background-color: #0069d9;
+
+}
 
 
-  /*this is css for the GraphsControl screen*/
-  .graphs-control {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .graphs-control button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .graphs-control button:hover {
-    background-color: #0069d9;
-    transition: background-color 0.2s ease;
-  }
+/*this is css for the GraphsControl screen*/
+.graphs-control {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 
-    /*this is css for the About screen*/
-    .project-description {
-        text-align: center;
-        margin: 20px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-      }
-      
-      .project-description h1 {
-        font-size: 2em;
-        margin-bottom: 0.5em;
-      }
-      
-      .project-description p {
-        font-size: 1.2em;
-        margin-bottom: 1em;
-      }
+.graphs-control button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.2s ease;
+}
+
+.graphs-control button:hover {
+  background-color: #0069d9;
+  transition: background-color 0.2s ease;
+}
+
+  /*this is css for the About screen*/
+  .project-description {
+      text-align: center;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    
+    .project-description h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    
+    .project-description p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
