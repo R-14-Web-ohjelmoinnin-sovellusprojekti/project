@@ -204,7 +204,7 @@ export default function Visualization1() {
   }    
   return (
     <div className="vis1-container">
-      <h1>Global historical surface temperature anomalies from January 1850 onwards</h1>
+      <h1>Global historical surface temperature anomalies from January 1850 onwards and 2000-year reconstruction</h1>
         <div className="vis1-buttons">
           <button onClick={timeAnnual}>Annual</button>
           <button onClick={timeMonthly}>Monthly</button>
