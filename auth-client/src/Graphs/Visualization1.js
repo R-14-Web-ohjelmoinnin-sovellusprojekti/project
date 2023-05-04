@@ -69,16 +69,15 @@ export default function Visualization1() {
       {
         x: {
           type: 'time',
+          
           time: {
-          tooltipFormat: 'yyyy'
+          parser: 'y',
+          tooltipFormat: 'yyyy',
           },
-          //min: new Date('1850').valueOf(),
-          //max: 2023//max: new Date('2023').valueOf()
         },
+        
         y: {
             type: 'linear',
-            //min: -1,
-            //max: 1.5
         }
       },
       parsing: {
@@ -110,10 +109,11 @@ export default function Visualization1() {
           time: {
             tooltipFormat: 'yyyy LLLL',
             unit: 'month',
-            parser: "yyyy-LL",
+            parser: "yyyy-LL",         
             displayFormats: {
             month: 'yyyy LLLL'
-          }
+          },
+          
         },
       },
       y: {
@@ -129,19 +129,19 @@ export default function Visualization1() {
   const annualDataset = {
     datasets: [
       {
-        label: "Global",
+        label: "Global annual anomalies",
         data: annualData.filter(annualData => isGlobal(annualData)),
         borderColor: "rgb(50, 255, 112)",
         backgroundColor: "rgba(32, 255, 32, 0.5)",
       },
       {
-        label: "Northern",
+        label: "North annual anomalies",
         data: annualData.filter(annualData => isNorthern(annualData)),
         borderColor: "rgb(0, 50, 255)",
         backgroundColor: "rgba(32, 32, 255, 0.5)",
       },
       {
-        label: "Southern",
+        label: "South annual anomalies",
         data: annualData.filter(annualData => isSouthern(annualData)),
         borderColor: "rgb(255, 50, 112)",
         backgroundColor: "rgba(255, 32, 32, 0.5)",
@@ -157,19 +157,19 @@ export default function Visualization1() {
     const monthlyDataset = {
       datasets: [
       {
-        label: "Global",
+        label: "Global monthly anomalies",
         data: monthlyData.filter(monthlyData => isGlobal(monthlyData)),
         borderColor: "rgb(50, 255, 112)",
         backgroundColor: "rgba(32, 255, 32, 0.5)",
       },
       {
-        label: "Northern",
+        label: "North monthly anomalies",
         data: monthlyData.filter(monthlyData => isNorthern(monthlyData)),
         borderColor: "rgb(0, 50, 255)",
         backgroundColor: "rgba(32, 32, 255, 0.5)",
       },
       {
-        label: "Southern",
+        label: "South monthly anomalies",
         data: monthlyData.filter(monthlyData => isSouthern(monthlyData)),
         borderColor: "rgb(255, 50, 112)",
         backgroundColor: "rgba(255, 32, 32, 0.5)",
@@ -211,29 +211,17 @@ export default function Visualization1() {
         </div>     
       {view}
       <p>
-        This chart shows global historical surface temperature anomalies relative to a 1961-1990 reference period. 
-        And each month from January 1850 onwards.
-        The chart includes toggle options for both monthly and annual mean data, with the horizontal axis representing the years.
-        In this chart you also can see Northern Hemisphere 2,000-year temperature reconstruction.
-      </p>
-      <p>
-        You can find more detailed information below<br></br>
-        <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">Description and Dataset</a><br></br>
-        <a href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005">Description</a><br></br>
-        <a href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt">Dataset</a><br></br>
-        <a href="https://www.nature.com/articles/nature03265">Here you find full study</a>
-      </p>
+                This chart shows global and regional temperature anomalies starting from January 1850 and a 2000-year temperature reconstruction for the northern hemisphere.
+                You can switch between monthly and annual datasets by clicking on the 'annual' or 'monthly' buttons.
+
+            </p>
+            <p> <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">Description for Temperature anomalies from 1850</a><br></br>
+                <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/data/current/download.html">Dataset for Temperature anomalies from 1850</a><br></br><br></br>
+
+                <a href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005">Description for 2000-year Temperature Reconstruction</a><br></br>
+                <a href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt">Dataset for 2000-year Temperature Reconstruction</a><br></br>
+                <a href="https://www.nature.com/articles/nature03265">Full study for 2000-year Temperature Reconstruction</a>
+            </p>
     </div>
   );  
 }
-
-/*
-return (
-    <div style={{ width: "1000px"}}>
-      <h1>Global historical surface temperature anomalies from January 1850 onwards</h1>
-      <button onClick={timeAnnual}>Annual</button>
-      <button onClick={timeMonthly}>Monthly</button>          
-      {view}
-    </div>
-  );
-  */
