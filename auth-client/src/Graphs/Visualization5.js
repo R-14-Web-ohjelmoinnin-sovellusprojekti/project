@@ -203,7 +203,7 @@ export default function Visualization5() {
             title: {
                 align: "center",
                 display: true,
-                text: "Visualization 5, main sectors",
+                text: "Emissions data by sector",
             }
         }
     };
@@ -308,10 +308,13 @@ export default function Visualization5() {
             {view}
             <p>
                 This chart shows CO2 emissions by sectors. By clicking on sector pie you get a detailed breakdown of every subsector.
-                You find more detailed information below
+                You can find more detailed information below
             </p>
             <p> <a href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector">Description</a><br></br>
                 <a href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx">Dataset</a>
+            <br></br> 
+            <br></br>
+            <br></br>   
             </p>
 
         </div>

@@ -6,8 +6,7 @@ import Visualization3 from '../Graphs/Visualization3';
 
 export default function V1_V3(){
     return(
-        <div>Visualization 1-3
-
+        <div>
             <Visualization1 />
             <Visualization2 />
             <Visualization3 />

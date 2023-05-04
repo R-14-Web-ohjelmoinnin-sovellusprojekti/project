@@ -210,6 +210,16 @@ export default function Visualization1() {
           <button onClick={timeMonthly}>Monthly</button>
         </div>     
       {view}
+      <p>
+        
+      </p>
+      <p>
+        You can find more detailed information below<br></br>
+        <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">Description and Dataset</a><br></br>
+        <a href="https://bolin.su.se/data/moberg-2012-nh-1?n=moberg-2005">Description</a><br></br>
+        <a href="https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/moberg2005/nhtemp-moberg2005.txt">Dataset</a><br></br>
+        <a href="https://www.nature.com/articles/nature03265">Here you find full study</a>
+      </p>
     </div>
   );  
 }
