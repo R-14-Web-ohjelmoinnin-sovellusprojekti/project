@@ -21,7 +21,7 @@ import com.security.auth.repository.Visualization2.Visualization2MonthlyReposito
 
 @CrossOrigin
 @RestController
-public class V2RestController {
+public class Visualization2RestController {
 
     Visualization2AnnualRepository vis2Annual;
     Visualization2MonthlyRepository vis2Monthly;
@@ -30,7 +30,7 @@ public class V2RestController {
     Visualization2Icecore3Repository vis2Icecore3;
 
     @Autowired
-    public V2RestController(Visualization2AnnualRepository vis2Annual,
+    public Visualization2RestController(Visualization2AnnualRepository vis2Annual,
             Visualization2MonthlyRepository vis2Monthly, Visualization2Icecore1Repository vis2Icecore1,
             Visualization2Icecore2Repository vis2Icecore2, Visualization2Icecore3Repository vis2Icecore3) {
         this.vis2Annual = vis2Annual;
