@@ -47,12 +47,12 @@
   .vis1-container a {
     padding: 10px;
     font-size: 1em;
-    color: blue;
+    color: black;
     text-decoration: none;
 }
 
 .vis1-container a:hover {
-    color: black;
+    color: grey;
 }
   
 /*This is css for the visualizations2 in the visualization page*/
@@ -75,12 +75,12 @@
     .vis2-container a {
         padding: 10px;
         font-size: 1em;
-        color: blue;
+        color: black;
         text-decoration: none;
     }
 
     .vis2-container a:hover {
-        color: black;
+        color: grey;
     }
 
 /*This is css for the visualizations3 in the visualization page*/
@@ -104,12 +104,12 @@
     .vis3-container a {
         padding: 10px;
         font-size: 1em;
-        color: blue;
+        color: black;
         text-decoration: none;
     }
 
     .vis3-container a:hover {
-        color: black;
+        color: grey;
     }
 
 /*This is css for the visualizations4 in the visualization page*/
@@ -133,29 +133,34 @@
     .vis4-container a {
         padding: 10px;
         font-size: 1em;
-        color: blue;
+        color: black;
         text-decoration: none;
     }
 
     .vis4-container a:hover {
-        color: black;
+        color: grey;
     }
 
 
 /* Media queries, responsive*/
 @media only screen and (max-width: 768px){
     .vis1-container {
-        width: 100%;
+        width: 90%;
         padding: 0 20px;
     }
 
     .vis2-container {
-        width: 100%;
+        width: 90%;
         padding: 0 20px;
     }
 
     .vis3-container {
-        width: 100%;
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    .vis4-container {
+        width: 90%;
         padding: 0 20px;
     }
 }
@@ -183,12 +188,12 @@
     .vis5-container a {
         padding: 10px;
         font-size: 1em;
-        color: blue;
+        color: black;
         text-decoration: none;
     }
 
     .vis5-container a:hover {
-        color: black;
+        color: grey;
     }
 
     @media only screen and (max-width: 768px){
