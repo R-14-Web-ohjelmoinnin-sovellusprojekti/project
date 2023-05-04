@@ -47,12 +47,12 @@
   .vis1-container a {
     padding: 10px;
     font-size: 1em;
-    color: black;
+    color: blue;
     text-decoration: none;
 }
 
 .vis1-container a:hover {
-    color: grey;
+    color: black;
 }
   
 /*This is css for the visualizations2 in the visualization page*/
@@ -75,12 +75,12 @@
     .vis2-container a {
         padding: 10px;
         font-size: 1em;
-        color: black;
+        color: blue;
         text-decoration: none;
     }
 
     .vis2-container a:hover {
-        color: grey;
+        color: black;
     }
 
 /*This is css for the visualizations3 in the visualization page*/
@@ -104,12 +104,12 @@
     .vis3-container a {
         padding: 10px;
         font-size: 1em;
-        color: black;
+        color: blue;
         text-decoration: none;
     }
 
     .vis3-container a:hover {
-        color: grey;
+        color: black;
     }
 
 /*This is css for the visualizations4 in the visualization page*/
@@ -133,12 +133,12 @@
     .vis4-container a {
         padding: 10px;
         font-size: 1em;
-        color: black;
+        color: blue;
         text-decoration: none;
     }
 
     .vis4-container a:hover {
-        color: grey;
+        color: black;
     }
 
 
@@ -183,12 +183,12 @@
     .vis5-container a {
         padding: 10px;
         font-size: 1em;
-        color: black;
+        color: blue;
         text-decoration: none;
     }
 
     .vis5-container a:hover {
-        color: grey;
+        color: black;
     }
 
     @media only screen and (max-width: 768px){
