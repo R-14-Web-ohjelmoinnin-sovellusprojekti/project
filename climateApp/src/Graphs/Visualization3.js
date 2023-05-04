@@ -6,6 +6,8 @@ import "chartjs-adapter-luxon";
 export default function Visualization3() {
   const [gastData, setGastData] = useState([]);
   const [cdData, setCdData] = useState([]);
+  const [eventData, setEventData] = useState([]);
+
   const url = "http://localhost:8080/";
 
   const getGastData = async () => {
@@ -27,10 +29,20 @@ export default function Visualization3() {
     }
   };
 
+  const getEventData = async () => {
+    try {
+      const response = await axios.get(`${url}humanevents`);
+      setEventData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(`Error fetching cd data: ${error}`);
+    }
+  };
+
   useEffect(() => {
     getGastData();
     getCdData();
-
+    getEventData();
   }, []);
 
   const data = {
@@ -38,7 +50,7 @@ export default function Visualization3() {
       {
         label: "Global data",
         data: gastData,
-        xAxisID: "left-x-axis",
+        yAxisID: 'y',
         borderColor: "rgb(255, 0, 0)",
         backgroundColor: "rgba(255, 0, 0, 0.8)",
         parsing: {
@@ -50,7 +62,7 @@ export default function Visualization3() {
       {
         label: "Carbon data",
         data: cdData,
-        yAxisID: "right-y-axis",
+        yAxisID: 'y1',
         borderColor: "rgb(0, 0, 0)",
         backgroundColor: "rgba(0, 0, 0, 1)",
         parsing: {
@@ -59,40 +71,54 @@ export default function Visualization3() {
         },
         pointRadius: 1,
       },
-    ],
-    scales: {
-      x: {
-        type: 'time',
-        time: {
-          displayFormats: {
-            unit: 'YYYY'
-          }
+      {
+        label: "Event data",
+        data: eventData,
+        //yAxisID: 'y1',
+        borderColor: "rgb(0, 127, 0)",
+        backgroundColor: "rgba(0, 255, 0, 1)",
+        parsing: {
+          xAxisKey: "time",
+          yAxisKey: "graphvalue",
+        },
+        pointRadius: 10,
+        pointStyle: 'triangle',
+        showLine: false,
+
+        tooltip: {
+          callbacks: {
+              label: function(context) {
+                  let label = context.dataset.label || '';
+                  let eventText = context.dataset.data[context.dataIndex]["event"];
+
+                  if (label && context.parsed.y !== null) {
+                      label = eventText;
+                  }
+                  return label;
+              }
+          }            
         }
       },
-      y: [
-        {
-          id: "left-x-axis",
-          type: "linear",
-          position: "left",
-          ticks: {
-            beginAtZero: true,
-          },
-          scaleLabel: {
-            display: true,
-            labelString: 'Gast',
+    ],
+    scales: {
+      scales: {
+        y: {
+          type: 'linear',
+          display: false,
+          position: 'left',
+        },
+        y1: {
+          type: 'linear',
+          display: false,
+          position: 'right',
+  
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
           },
         },
-        {
-          id: "right-y-axis",
-          type: "linear",
-          position: "right",
-          scaleLabel: {
-            display: true,
-            labelString: 'CD',
-          },
-        },
-      ],
-    },
+      }
+    }
   };
   
   const options = {
@@ -108,12 +134,23 @@ export default function Visualization3() {
     scales: {
       x: {
         type: "linear",
-        diplay: true,
+        display: true,
         position: "bottom",
-        min: -1000,
-        max: 805000,
+        min: 0,
+        max: 2000000,
+        reverse: true,
+        ticks: {
+          callback: function(value, index, ticks) {
+            if(value != 0){
+            return value + " BC";
+            }
+            else{
+              return value + " AD"
+            }
+        }
       },
-      yAxis: {
+      },
+      y: {
         type: "linear",
         display: true,
         position: "right",
