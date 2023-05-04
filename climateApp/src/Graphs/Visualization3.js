@@ -168,7 +168,9 @@ export default function Visualization3() {
       </div>
       <Line data={data} options={options} />
       <p> 
-        The graph shows the evolution of global temperature over the past two million years.
+        The multiaxis line chart shows the evolution of global temperature and CO2 concentration changes over the past two million years.
+        Horizontal axis shows years in thousands of years and vertical axis shows temperature in degrees celsius and CO2 concentration in ppm.
+        Additionally, the graph shows major human evolution and culture events that happened during the same period.
         You can find more detailed information below
       </p>
       <p>
