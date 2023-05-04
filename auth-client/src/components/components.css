@@ -118,7 +118,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 70vh;
   margin: 0;
   padding: 0;
 }
@@ -130,7 +130,7 @@ h1 {
   justify-content: center;
   border: 1px solid #ffffff;
   margin: 0;
-  padding: 30px;
+  padding: 50px 70px;
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -165,7 +165,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
   margin: 0;
   padding: 0;
 }
@@ -177,7 +177,7 @@ h1 {
   justify-content: center;
   border: 1px solid #ffffff;
   margin: 0;
-  padding: 30px;
+  padding: 50px 70px;
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -297,4 +297,32 @@ background-color: #0069d9;
     .project-description p {
       font-size: 1.2em;
       margin-bottom: 1em;
+    }
+
+    .user-login-status {
+      width: 250px;
+      text-align: center;
+      margin: 5px 1%; 
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    .logout-button {
+      width: 8%;
+      background-color: #e43e3e;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      margin: 4em auto;
+      display: block;
+    }
+
+    .logout-button:hover {
+      background-color: #830505;
     }

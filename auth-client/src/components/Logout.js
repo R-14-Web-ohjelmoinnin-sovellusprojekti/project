@@ -18,7 +18,7 @@ function Logout(props) {
   };
 
   return (
-    <button onClick={confirmLogout}>Logout</button>
+    <button onClick={confirmLogout} className="logout-button">Logout</button>
   );
 }
 

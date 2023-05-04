@@ -5,7 +5,7 @@ export default function Home(props){
     
     return(
         <div>
-            <div>
+            <div className="user-login-status">
             User login status: {props.userToken ? "Logged in" : "Logged out"}
             </div>
             <h1>Welcome to ClimateView home page!</h1>
