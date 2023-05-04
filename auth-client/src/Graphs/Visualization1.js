@@ -211,7 +211,10 @@ export default function Visualization1() {
         </div>     
       {view}
       <p>
-        
+        This chart shows global historical surface temperature anomalies relative to a 1961-1990 reference period. 
+        And each month from January 1850 onwards.
+        The chart includes toggle options for both monthly and annual mean data, with the horizontal axis representing the years.
+        In this chart you also can see Northern Hemisphere 2,000-year temperature reconstruction.
       </p>
       <p>
         You can find more detailed information below<br></br>
